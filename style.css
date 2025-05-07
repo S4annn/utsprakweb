@@ -20,7 +20,7 @@ body {
 header {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -59,7 +59,7 @@ nav a {
   font-size: 16px;
   font-weight: 500;
   text-decoration: none;
-  color: #e1e1e1;
+  color: #a9a9a9;
   position: relative;
   transition: color 0.3s ease;
 }
@@ -127,7 +127,7 @@ nav a.active:after {
   position: relative;
   overflow: hidden;
   text-align: center;
-  padding: 100px 60px 0;
+  padding: 100px 60px 200px; /* Added bottom padding to accommodate the car image */
   animation: fadeIn 1s ease-out forwards;
 }
 
@@ -207,19 +207,15 @@ nav a.active:after {
 
 .car-image {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   display: block;
-  margin: -100px auto;
+  margin: 0 auto;
   width: 1000px;
   max-height: 600px;
-  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
-  transition: filter 0.5s ease, transform 0.5s ease;
-  animation: float 6s ease-in-out infinite;
-}
-
-.car-image:hover {
-  filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.5));
-  transform: translateY(-5px);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  animation: none;
+  filter: none;
+  transform: translateY(0);
 }
 
 .car-image::after {
@@ -307,7 +303,7 @@ nav a.active:after {
   font-size: 48px;
   font-weight: 800;
   margin-bottom: 16px;
-  margin-top: 180px;
+  margin-top: 80px; /* Reduced from 180px to compensate for hero bottom padding */
 }
 
 .services-section p.description {
@@ -577,7 +573,6 @@ nav a.active:after {
   font-size: 14px;
   color: #a0a0a0;
   margin-left: auto;
-  padding-left: 150px;
 }
 
 .favorite-button {
@@ -686,14 +681,16 @@ nav a.active:after {
 }
 
 .contact-form h3 {
+  margin-top: 40px;
   font-size: 24px;
-  margin-bottom: 20px;
+  transform: translateY(-30px);
 }
 
 .contact-form form {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  margin-bottom: 450px;
 }
 
 .form-row {
@@ -849,9 +846,9 @@ button:hover {
 }
 
 .reveal {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .delay-100 {
@@ -909,17 +906,6 @@ button:hover {
   from {
     opacity: 0;
     transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -989,12 +975,20 @@ html {
   .car-image {
     width: 80%;
     max-width: 800px;
-    margin: -80px auto;
+    margin: 0 auto;
   }
-  
+
+  .hero {
+    padding: 100px 60px 150px;
+  }
+
   .services-section h2,
   .popular-deals h2 {
     font-size: 42px;
+  }
+
+  .services-section h2 {
+    margin-top: 60px;
   }
 }
 
@@ -1003,44 +997,44 @@ html {
   header {
     padding: 20px 40px;
   }
-  
+
   header.scrolled {
     padding: 14px 40px;
   }
-  
+
   .hero {
-    padding: 80px 40px 0;
+    padding: 80px 40px 120px;
   }
-  
+
   .hero h1 {
     font-size: 42px;
   }
-  
+
   .car-image {
-    margin: -50px auto;
+    margin: 0 auto;
   }
-  
+
   .services-section,
   .popular-deals {
     padding: 60px 40px;
   }
-  
+
   .services {
     gap: 20px;
   }
-  
+
   .services-section h2,
   .popular-deals h2 {
-    margin-top: 120px;
+    margin-top: 50px;
     font-size: 38px;
   }
-  
+
   .service-card {
     width: 280px;
     min-height: 420px;
     padding: 25px;
   }
-  
+
   .deal-card {
     width: 300px;
   }
@@ -1051,362 +1045,359 @@ html {
   header {
     padding: 16px 30px;
   }
-  
+
   header.scrolled {
     padding: 12px 30px;
   }
-  
+
   .logo img {
     height: 40px;
   }
-  
+
   nav {
     gap: 16px;
   }
-  
+
   .signup-button {
     padding: 10px 20px;
   }
-  
+
   .hero {
-    padding: 60px 30px 0;
+    padding: 60px 30px 100px;
   }
-  
+
   .hero h1 {
     font-size: 36px;
   }
-  
+
   .hero p {
     font-size: 15px;
     max-width: 80%;
     margin-left: auto;
     margin-right: auto;
   }
-  
+
   .car-image {
     width: 90%;
     margin: 0 auto;
   }
-  
+
   .services-section,
   .popular-deals {
     padding: 50px 30px;
   }
-  
+
   .services-section h2,
   .popular-deals h2 {
-    margin-top: 80px;
+    margin-top: 40px;
     font-size: 32px;
   }
-  
+
   .services-section p.description,
   .popular-deals .description {
     font-size: 16px;
     margin-bottom: 40px;
   }
-  
+
   .services {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .service-card {
     width: 90%;
     max-width: 400px;
     min-height: auto;
   }
-  
+
   .deals {
     justify-content: center;
   }
-  
+
   .deal-card {
     width: 280px;
   }
-  
+
   .contact-section {
     padding: 60px 30px;
   }
-  
+
   .contact-container {
     flex-direction: column;
   }
-  
+
   .form-row {
     flex-direction: column;
     gap: 16px;
   }
 }
 
-/* Small devices (landscape phones, less than 768px) */
 @media (max-width: 768px) {
   header {
     padding: 14px 20px;
     flex-direction: column;
     align-items: flex-start;
   }
-  
+
   header.scrolled {
     padding: 10px 20px;
   }
-  
+
   .logo {
     margin-bottom: 10px;
   }
-  
+
   nav {
+    display: none;
     flex-direction: column;
     width: 100%;
-    gap: 2px;
-    display: none; /* Hidden by default, can be toggled with JavaScript */
+    background: rgba(0, 0, 0, 0.9); /* Agar terlihat */
+    padding: 10px 0;
+    position: absolute;
+    top: 100%; /* Turun dari header */
+    left: 0;
+    z-index: 999;
   }
-  
+
   nav.show {
     display: flex;
   }
-  
-  /* Mobile menu button */
-  .mobile-menu-btn {
-    display: block;
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    background: transparent;
-    border: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-  }
-  
+
   nav a {
     width: 100%;
     padding: 10px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
-  
+
   nav a:after {
     bottom: 5px;
   }
-  
+
   .signup-button {
     width: 100%;
     margin-top: 10px;
   }
-  
+
   .hero {
     padding: 40px 20px 0;
   }
-  
+
   .hero h1 {
     font-size: 32px;
   }
-  
+
   .hero p {
     font-size: 14px;
     max-width: 95%;
   }
-  
+
   .see-more-btn {
     padding: 12px 30px;
     font-size: 14px;
   }
-  
+
   .car-image {
     width: 100%;
     margin: 20px auto;
   }
-  
+
   .services-section,
   .popular-deals {
     padding: 40px 20px;
   }
-  
+
   .services-section h2,
   .popular-deals h2 {
     margin-top: 60px;
     font-size: 28px;
   }
-  
+
   .services-section p.description,
   .popular-deals .description {
     font-size: 14px;
     margin-bottom: 30px;
   }
-  
+
   .deal-card {
     width: 100%;
     max-width: 320px;
   }
-  
+
   .deal-card h3 {
     min-height: auto;
     font-size: 16px;
   }
-  
+
   .contact-section {
     padding: 40px 20px;
     margin-top: 30px;
   }
-  
+
   .contact-info h2 {
     font-size: 28px;
   }
-  
+
   .contact-form h3 {
     font-size: 20px;
   }
-  
-  input, select, textarea, button {
+
+  input,
+  select,
+  textarea,
+  button {
     font-size: 14px;
     padding: 10px 14px;
   }
-  
+
   .slider-navigation {
     gap: 20px;
     margin-top: 40px;
   }
 }
 
-/* Extra small devices (phones, less than 576px) */
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
 @media (max-width: 576px) {
   header {
     padding: 12px 15px;
   }
-  
+
   header.scrolled {
     padding: 8px 15px;
   }
-  
+
   .logo img {
     height: 35px;
   }
-  
-  .mobile-menu-btn {
-    right: 15px;
-    top: 15px;
-    font-size: 20px;
-  }
-  
+
   .hero {
     padding: 30px 15px 0;
   }
-  
+
   .hero h1 {
     font-size: 28px;
     margin-bottom: 12px;
   }
-  
+
   .hero p {
     line-height: 1.4;
     margin-bottom: 30px;
   }
-  
+
   .see-more-btn {
     padding: 10px 24px;
     font-size: 14px;
   }
-  
-  .light-left, .light-right {
+
+  .light-left,
+  .light-right {
     width: 120px;
     height: 300px;
   }
-  
+
   .car-image {
     margin: 40px auto;
   }
-  
+
   .services-section,
   .popular-deals {
     padding: 30px 15px;
   }
-  
+
   .services-section h2,
   .popular-deals h2 {
     margin-top: 40px;
     font-size: 24px;
   }
-  
+
   .service-card {
     padding: 20px;
     width: 100%;
   }
-  
+
   .service-icon {
     width: 60px;
     height: 60px;
     font-size: 24px;
   }
-  
+
   .service-card h3 {
     font-size: 20px;
   }
-  
+
   .service-card p {
     font-size: 14px;
   }
-  
+
   .read-more-btn {
     padding: 8px 16px;
     font-size: 14px;
   }
-  
+
   .deal-card {
     padding: 15px;
     width: 100%;
   }
-  
+
   .deal-card img {
     height: 160px;
   }
-  
+
   .favorite-button {
     width: 30px;
     height: 30px;
     top: 15px;
     right: 15px;
   }
-  
+
   .favorite-button i {
     font-size: 14px;
   }
-  
+
   .details-button {
     padding: 10px;
     font-size: 14px;
     margin-top: 20px;
   }
-  
+
   .contact-section {
     padding: 30px 15px;
     margin-top: 20px;
   }
-  
+
   .contact-info h2 {
     font-size: 24px;
   }
-  
+
   .contact-info p {
     font-size: 14px;
     margin-bottom: 20px;
   }
-  
+
   .contact-item {
     font-size: 14px;
   }
-  
+
   .social-media a {
     font-size: 16px;
   }
-  
+
   .contact-form {
     gap: 12px;
   }
-  
+
   .nav-arrow {
     width: 32px;
     height: 32px;
   }
-  
+
   .dot {
     width: 8px;
     height: 8px;
@@ -1418,36 +1409,75 @@ html {
   .hero h1 {
     font-size: 24px;
   }
-  
+
   .hero p {
     font-size: 13px;
   }
-  
+
   .services-section h2,
   .popular-deals h2 {
     font-size: 22px;
   }
-  
+
   .car-image {
     margin: 50px auto;
   }
-  
+
   .contact-info h2 {
     font-size: 22px;
   }
 }
 
-/* Add JavaScript toggle function for mobile menu */
 @media (max-width: 768px) {
-  /* Add this HTML to your document:
-  <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
-    <i class="fas fa-bars"></i>
-  </button>
-  
-  Add this JavaScript:
-  function toggleMobileMenu() {
-    const nav = document.querySelector('nav');
-    nav.classList.toggle('show');
+  header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 1rem;
   }
-  */
+
+  .menu-toggle {
+    display: block;
+    z-index: 1001;
+  }
+
+  nav#nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  nav#nav-menu.active {
+    display: flex;
+  }
+
+  .signup-button {
+    margin: 1rem 0 0 auto;
+  }
+
+  /* Dropdown fix */
+  .dropdown-content {
+    display: none;
+    position: static;
+    box-shadow: none;
+    background-color: transparent;
+    padding-left: 1rem;
+  }
+
+  .dropdown.active .dropdown-content {
+    display: block;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: none; /* Disable hover in mobile */
+  }
 }

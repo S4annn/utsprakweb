@@ -16,13 +16,18 @@
             <div class="logo">
                 <img src="images/logo.png" alt="logo">
             </div>
-            <nav>
+
+            <button class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav-menu">
                 <div class="dropdown">
-                    <a href="#" class="dropdown-toggle">Why Choose Us <i
+                    <a href="#" id="dropdown-toggle" class="dropdown-toggle">Why Choose Us <i
                             class="fa-solid fa-caret-down"></i></a>
                     <div class="dropdown-content">
                         <a href="quality.html">Quality Assurance</a>
-                        <a href="experience.html">Years of Experience</a>
+                        <a href="experience.htmlq">Years of Experience</a>
                         <a href="warranty.html">Extended Warranty</a>
                         <a href="testimonials.html">Customer Testimonials</a>
                         <a href="awards.html">Awards & Recognition</a>
@@ -199,41 +204,38 @@
                                 class="fab fa-github"></i></a>
                     </div>
                 </div>
-                <section class="contact-section">
-                    <div class="contact-container">
-                        <div class="contact-info">
-                            <div class="contact-form" id="contact">
-                                <h3>Add Your Details</h3>
-                                <form>
-                                    <div class="form-row">
-                                        <input type="text"
-                                            placeholder="First Name*"
-                                            required>
-                                        <input type="text"
-                                            placeholder="Last Name">
-                                    </div>
-                                    <input type="email" placeholder="Email*"
-                                        required>
-                                    <select required>
-                                        <option value>Choose Service*</option>
-                                        <option value="rental">Rental</option>
-                                        <option value="repair">Repair</option>
-                                    </select>
-                                    <div class="phone-input">
-                                        <span class="flag"><img
-                                                src="images/indonesia.png"
-                                                alt="flag"></span>
-                                        <input type="tel"
-                                            placeholder="Enter Your Phone Number"
-                                            required>
-                                    </div>
-                                    <textarea placeholder="Comment"></textarea>
-                                    <button type="submit">Submit</button>
-                                </form>
-                            </div>
+                <div class="contact-form" id="contact">
+                    <h3>Add Your Details</h3>
+                    <form>
+                        <div class="form-row">
+                            <input type="text"
+                                placeholder="First Name*"
+                                required>
+                            <input type="text"
+                                placeholder="Last Name">
                         </div>
-                    </section>
+                        <input type="email" placeholder="Email*"
+                            required>
+                        <select required>
+                            <option value>Choose Service*</option>
+                            <option value="rental">Rental</option>
+                            <option value="repair">Repair</option>
+                        </select>
+                        <div class="phone-input">
+                            <span class="flag"><img
+                                    src="images/indonesia.png"
+                                    alt="flag"></span>
+                            <input type="tel"
+                                placeholder="Enter Your Phone Number"
+                                required>
+                        </div>
+                        <textarea placeholder="Comment"></textarea>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </section>
 
-                    <script src="script.js"></script>
-                </body>
-            </html>
+        <script src="script.js"></script>
+    </body>
+</html>

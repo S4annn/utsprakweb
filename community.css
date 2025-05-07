@@ -23,6 +23,51 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 24px 60px;
+  background-color: rgba(1, 1, 1, 0.9);
+  backdrop-filter: blur(8px);
+  transition: padding 0.3s ease, background-color 0.3s ease;
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+header.scrolled {
+  padding: 16px 60px;
+  background-color: rgba(1, 1, 1, 0.95);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #1a1a1a;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 8px;
+  border: 1px solid #333;
+  padding: 10px 0;
+}
+
+.dropdown-content a {
+  color: #e1e1e1;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #333;
+  color: white;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  animation: fadeIn 0.3s;
 }
 
 .logo img {
@@ -244,7 +289,6 @@ nav a.active {
   color: #aaa;
   font-size: 14px;
 }
-
 
 .join-community {
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),

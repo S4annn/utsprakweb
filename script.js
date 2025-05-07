@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     setInterval(animateCarGlow, 8000);
 
-    // Interaction with mouse hover
     car.addEventListener('mouseenter', () => {
         car.style.transition = 'filter 0.5s ease';
         car.style.filter = `
@@ -39,41 +38,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// JavaScript for handling the carousel interaction
 let currentIndex = 0;
 const cards = document.querySelectorAll('.service-card');
 const dots = document.querySelectorAll('.dot');
 const carouselWrapper = document.querySelector('.carousel-wrapper');
 
 function updateCarousel() {
-  // Reset all cards to inactive (opacity 0.3)
   cards.forEach(card => card.classList.remove('active'));
   
-  // Set the active cards
   const activeCards = Array.from(cards).slice(currentIndex, currentIndex + 3);
   activeCards.forEach(card => card.classList.add('active'));
   
-  // Update dot navigation
   dots.forEach(dot => dot.classList.remove('active'));
   dots[currentIndex].classList.add('active');
 }
 
-// Initialize carousel by displaying the first set of 3 cards
 updateCarousel();
 
-// Function to move to next slide
 function nextSlide() {
   currentIndex = (currentIndex + 1) % (cards.length - 2);
   updateCarousel();
 }
 
-// Function to move to previous slide
 function prevSlide() {
   currentIndex = (currentIndex - 1 + (cards.length - 2)) % (cards.length - 2);
   updateCarousel();
 }
 
-// Event listeners for dot navigation
 dots.forEach((dot, index) => {
   dot.addEventListener('click', () => {
     currentIndex = index;
@@ -81,12 +72,10 @@ dots.forEach((dot, index) => {
   });
 });
 
-// Example navigation arrows (optional)
 document.querySelector('.nav-arrow.right').addEventListener('click', nextSlide);
 document.querySelector('.nav-arrow.left').addEventListener('click', prevSlide);
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Header scroll effect
     const header = document.querySelector('header');
     
     window.addEventListener('scroll', function() {
@@ -97,9 +86,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // We removed the Intersection Observer code that was hiding elements
-    
-    // Car image hover effect with headlights
     const carImage = document.querySelector('.car-image');
     
     if (carImage) {
@@ -112,7 +98,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Favorite button effect
     const favoriteButtons = document.querySelectorAll('.favorite-button');
     
     favoriteButtons.forEach(button => {
@@ -120,7 +105,6 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             this.classList.toggle('active');
             
-            // Add a little heart animation
             if (this.classList.contains('active')) {
                 const heart = document.createElement('span');
                 heart.innerHTML = '❤️';
@@ -140,7 +124,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Create keyframes for heart animation
     const style = document.createElement('style');
     style.innerHTML = `
     @keyframes floatUp {
@@ -149,7 +132,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }`;
     document.head.appendChild(style);
     
-    // Add parallax effect for hero section
     const heroSection = document.querySelector('.hero');
     
     if (heroSection) {
@@ -157,23 +139,19 @@ document.addEventListener('DOMContentLoaded', function() {
             const scrollPos = window.scrollY;
             const parallaxFactor = 0.4;
             
-            // Apply parallax to the hero section
             heroSection.style.backgroundPositionY = scrollPos * parallaxFactor + 'px';
             
-            // If there's a car image in the hero, make it move at a different rate
             if (carImage) {
                 carImage.style.transform = `translateY(${scrollPos * 0.1}px)`;
             }
         });
     }
     
-    // Add staggered animation to service cards
     const serviceCards = document.querySelectorAll('.service-card');
     serviceCards.forEach((card, index) => {
         card.style.transitionDelay = `${index * 0.1 + 0.1}s`;
     });
     
-    // Add staggered animation to deal cards
     const dealCards = document.querySelectorAll('.deal-card');
     dealCards.forEach((card, index) => {
         card.style.transitionDelay = `${index * 0.1 + 0.1}s`;
@@ -194,3 +172,44 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+    const nav = document.querySelector('nav');
+    nav.classList.toggle('show');
+  });
+  
+  // Add scroll class to header
+  window.addEventListener('scroll', function() {
+    const header = document.querySelector('header');
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+  
+  // Intersection Observer for revealing elements on scroll
+  document.addEventListener('DOMContentLoaded', function() {
+    const revealElements = document.querySelectorAll('.services-section, .popular-deals, .contact-section, .service-card, .deal-card');
+    
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+    
+    const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+    
+    revealElements.forEach(element => {
+      element.style.opacity = '0';
+      element.style.transform = 'translateY(30px)';
+      revealOnScroll.observe(element);
+    });
+  });

@@ -127,7 +127,7 @@ nav a.active:after {
   position: relative;
   overflow: hidden;
   text-align: center;
-  padding: 100px 60px 200px; /* Added bottom padding to accommodate the car image */
+  padding: 100px 60px 200px; 
   animation: fadeIn 1s ease-out forwards;
 }
 
@@ -303,7 +303,7 @@ nav a.active:after {
   font-size: 48px;
   font-weight: 800;
   margin-bottom: 16px;
-  margin-top: 80px; /* Reduced from 180px to compensate for hero bottom padding */
+  margin-top: 80px; 
 }
 
 .services-section p.description {
@@ -690,7 +690,6 @@ nav a.active:after {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  margin-bottom: 450px;
 }
 
 .form-row {
@@ -779,7 +778,17 @@ button:hover {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Slider Navigation Animations */
+.footer {
+  background-color: #0d0d0d;
+  color: #ccc;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  border-top: 1px solid #222;
+}
+
+
 .slider-navigation {
   display: flex;
   justify-content: center;
@@ -964,13 +973,6 @@ button:hover {
   transition: opacity 0.5s ease;
 }
 
-/*BAGIAN RESPONSIVE*/
-
-/* Global responsive adjustments */
-html {
-  font-size: 16px;
-}
-
 @media (max-width: 1400px) {
   .car-image {
     width: 80%;
@@ -992,7 +994,6 @@ html {
   }
 }
 
-/* Large devices (desktops, less than 1200px) */
 @media (max-width: 1200px) {
   header {
     padding: 20px 40px;
@@ -1040,7 +1041,6 @@ html {
   }
 }
 
-/* Medium devices (tablets, less than 992px) */
 @media (max-width: 992px) {
   header {
     padding: 16px 30px;
@@ -1151,10 +1151,10 @@ html {
     display: none;
     flex-direction: column;
     width: 100%;
-    background: rgba(0, 0, 0, 0.9); /* Agar terlihat */
+    background: rgba(0, 0, 0, 0.9); 
     padding: 10px 0;
     position: absolute;
-    top: 100%; /* Turun dari header */
+    top: 100%; 
     left: 0;
     z-index: 999;
   }
@@ -1404,7 +1404,6 @@ html {
   }
 }
 
-/* Ultra small devices */
 @media (max-width: 380px) {
   .hero h1 {
     font-size: 24px;
@@ -1464,7 +1463,6 @@ html {
     margin: 1rem 0 0 auto;
   }
 
-  /* Dropdown fix */
   .dropdown-content {
     display: none;
     position: static;
@@ -1478,6 +1476,6 @@ html {
   }
 
   .dropdown:hover .dropdown-content {
-    display: none; /* Disable hover in mobile */
+    display: none; 
   }
 }

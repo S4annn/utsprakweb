@@ -9,8 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const revealElements = document.querySelectorAll('.services-section, .popular-deals, .contact-section, .service-card, .deal-card');
     const toggleButton = document.getElementById('menu-toggle');
     const navMenu = document.getElementById('nav-menu');
-  
-    // Animate car glow
+
     function animateCarGlow() {
       if (!car) return;
       car.style.transition = 'filter 3s ease-in-out';
@@ -31,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
     animateCarGlow();
     setInterval(animateCarGlow, 8000);
   
-    // Car hover effect
     if (car) {
       car.addEventListener('mouseenter', () => {
         car.style.transition = 'filter 0.5s ease';
@@ -50,7 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   
-    // Header scroll + parallax
     window.addEventListener('scroll', () => {
       if (window.scrollY > 50) {
         header.classList.add('scrolled');
@@ -65,7 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   
-    // Favorite button animation
     favoriteButtons.forEach(button => {
       button.addEventListener('click', function (e) {
         e.preventDefault();
@@ -89,7 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   
-    // Heart animation keyframes
     const style = document.createElement('style');
     style.innerHTML = `
       @keyframes floatUp {
@@ -99,7 +94,6 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     document.head.appendChild(style);
   
-    // Service & deal card reveal delay
     serviceCards.forEach((card, index) => {
       card.style.transitionDelay = `${index * 0.1 + 0.1}s`;
     });
@@ -108,7 +102,6 @@ document.addEventListener('DOMContentLoaded', () => {
       card.style.transitionDelay = `${index * 0.1 + 0.1}s`;
     });
   
-    // Dropdown hover (desktop) + click (mobile)
     dropdowns.forEach(dropdown => {
       const toggle = dropdown.querySelector('.dropdown-toggle');
       const content = dropdown.querySelector('.dropdown-content');
@@ -121,7 +114,6 @@ document.addEventListener('DOMContentLoaded', () => {
         content.style.display = 'none';
       });
   
-      // Click (mobile)
       toggle.addEventListener('click', (e) => {
         e.preventDefault();
         dropdown.classList.toggle('active');
@@ -133,7 +125,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   
-    // Intersection observer for scroll reveal
     const observerOptions = {
       root: null,
       rootMargin: '0px',
@@ -155,17 +146,14 @@ document.addEventListener('DOMContentLoaded', () => {
       revealOnScroll.observe(element);
     });
   
-    // Mobile nav menu toggle
     toggleButton.addEventListener('click', () => {
       navMenu.classList.toggle('active');
     });
   });
   
-  // Placeholder for future slider buttons
   document.querySelector('.nav-arrow.right')?.addEventListener('click', nextSlide);
   document.querySelector('.nav-arrow.left')?.addEventListener('click', prevSlide);
   
-  // Dummy functions if not implemented
   function nextSlide() {
     console.log("Next slide triggered");
   }

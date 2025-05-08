@@ -531,6 +531,7 @@ textarea {
     }
 }
 
+/* Animation for cards */
 @keyframes cardFadeIn {
     from {
         opacity: 0;

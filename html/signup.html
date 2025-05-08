@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up - S4annn Motors</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+   <link rel="stylesheet" href="../css/signup.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="../images/logo.png" alt="logo">
+        </div>
+
+        <button class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <nav id="nav-menu">
+            <div class="dropdown">
+                <a href="#" id="dropdown-toggle" class="dropdown-toggle">Why Choose Us 
+                    <i class="fa-solid fa-caret-down"></i>
+                </a>
+                <div class="dropdown-content">
+                    <a href="quality.html">Quality Assurance</a>
+                    <a href="experience.html">Years of Experience</a>
+                    <a href="warranty.html">Extended Warranty</a>
+                    <a href="testimonials.html">Customer Testimonials</a>
+                    <a href="awards.html">Awards & Recognition</a>
+                </div>
+            </div>
+            <a href="index.html">Home</a>
+            <a href="index.html#service">Service</a>
+            <a href="index.html#product">Product</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="community.html">Community</a>
+        </nav>
+        <a href="signup.html"><button class="signup-button">Sign Up Now</button></a>
+    </header>
+
+    <section class="signup-section">
+        <div class="light-left"></div>
+        <div class="light-right"></div>
+
+        <div class="signup-container">
+            <div class="signup-header">
+                <h1>Create Your Account</h1>
+                <p>Join S4annn Motors today and get exclusive access to premium car deals, extended warranties, and much more.</p>
+            </div>
+
+            <form class="signup-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" placeholder="Enter your first name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" placeholder="Enter your last name" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="Enter your email address" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="Enter your phone number" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Create a strong password" required>
+                        <i class="far fa-eye password-toggle" id="togglePassword"></i>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+                        <i class="far fa-eye password-toggle" id="toggleConfirmPassword"></i>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="interests">Interests</label>
+                    <select id="interests" required>
+                        <option value="">Select your interest</option>
+                        <option value="new">New Cars</option>
+                        <option value="used">Used Cars</option>
+                        <option value="service">Car Service</option>
+                        <option value="parts">Car Parts</option>
+                        <option value="all">All of the above</option>
+                    </select>
+                </div>
+
+                <div class="agreement">
+                    <input type="checkbox" id="terms" required>
+                    <label for="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                </div>
+
+                <div class="agreement">
+                    <input type="checkbox" id="newsletter">
+                    <label for="newsletter">Send me updates about new car releases and special offers</label>
+                </div>
+
+                <button type="submit" class="signup-btn">Create Account</button>
+            </form>
+
+            <div class="social-signup">
+                <span>Or Sign Up With</span>
+                <div class="social-icons">
+                    <div class="social-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <div class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </div>
+                    <div class="social-icon">
+                        <i class="fab fa-apple"></i>
+                    </div>
+                    <div class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="login-link">
+                Already have an account? <a href="#">Log In</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 S4annn Motors. All rights reserved.</p>
+    </footer>
+
+   <script src="../javascript/script.js"></script>
+</body>
+</html>

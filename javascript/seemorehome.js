@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const navMenu = document.getElementById('nav-menu');
     const dropdowns = document.querySelectorAll('.dropdown');
 
-    // Scroll effect for header
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             header.classList.add('scrolled');
@@ -13,12 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Mobile menu toggle
     toggleButton.addEventListener('click', () => {
         navMenu.classList.toggle('active');
     });
 
-    // Dropdown functionality for mobile
     if (window.innerWidth <= 768) {
         dropdowns.forEach(dropdown => {
             const toggle = dropdown.querySelector('.dropdown-toggle');
@@ -36,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Desktop dropdown hover effect
     if (window.innerWidth > 768) {
         dropdowns.forEach(dropdown => {
             dropdown.addEventListener('mouseenter', () => {
@@ -49,18 +45,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Update dropdown behavior when window is resized
     window.addEventListener('resize', () => {
         if (window.innerWidth <= 768) {
             dropdowns.forEach(dropdown => {
                 const toggle = dropdown.querySelector('.dropdown-toggle');
                 const content = dropdown.querySelector('.dropdown-content');
                 
-                // Remove hover events
                 dropdown.removeEventListener('mouseenter');
                 dropdown.removeEventListener('mouseleave');
                 
-                // Add click event if not already present
                 if (!toggle.hasAttribute('data-click-listener')) {
                     toggle.addEventListener('click', (e) => {
                         e.preventDefault();
@@ -79,11 +72,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 const toggle = dropdown.querySelector('.dropdown-toggle');
                 const content = dropdown.querySelector('.dropdown-content');
                 
-                // Remove click events
                 toggle.removeEventListener('click');
                 toggle.removeAttribute('data-click-listener');
                 
-                // Add hover events
                 dropdown.addEventListener('mouseenter', () => {
                     content.style.display = 'block';
                 });

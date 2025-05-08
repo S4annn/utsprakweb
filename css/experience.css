@@ -1,0 +1,362 @@
+
+.experience-hero {
+    position: relative;
+    padding: 120px 60px 100px;
+    text-align: center;
+    overflow: hidden;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.experience-hero h1 {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-out 0.2s forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.experience-hero p {
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    animation: fadeIn 1s ease-out 0.4s forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.timeline-container {
+    max-width: 1200px;
+    margin: 60px auto;
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 4px;
+    background: linear-gradient(to bottom, #444, #1a1a1a);
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+}
+
+.timeline-item {
+    margin-bottom: 100px;
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.timeline-item.reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.timeline-item:nth-child(even) {
+    margin-left: 50%;
+    padding-left: 40px;
+}
+
+.timeline-item:nth-child(odd) {
+    margin-right: 50%;
+    padding-right: 40px;
+    text-align: right;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 50%;
+    top: 20px;
+}
+
+.timeline-item:nth-child(even)::before {
+    left: -8px;
+}
+
+.timeline-item:nth-child(odd)::before {
+    right: -8px;
+}
+
+.timeline-year {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.timeline-content {
+    background: #0c0c0c;
+    border: 1px solid #2e2e2e;
+    border-radius: 12px;
+    padding: 25px;
+    transition: all 0.4s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-color: #4a4a4a;
+}
+
+.timeline-content h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.timeline-content p {
+    color: #e1e1e1;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.timeline-badge {
+    display: inline-block;
+    background: linear-gradient(to right, #444, #1a1a1a);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 30px;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-right: 8px;
+}
+
+.achievement-section {
+    padding: 80px 60px;
+    text-align: center;
+    background: #0d0d0d;
+    margin-top: 40px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.achievement-section.reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.achievement-section h2 {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 40px;
+}
+
+.achievement-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.achievement-card {
+    background: #0c0c0c;
+    border: 1px solid #2e2e2e;
+    border-radius: 12px;
+    padding: 30px;
+    width: 300px;
+    text-align: center;
+    transition: all 0.4s ease;
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-color: #4a4a4a;
+}
+
+.achievement-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.achievement-number {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.achievement-text {
+    color: #e1e1e1;
+}
+
+.cta-section {
+    position: relative;
+    text-align: center;
+    padding: 100px 60px;
+    margin: 40px 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.cta-section.reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cta-light {
+    position: absolute;
+    top: 50%;
+    width: 180px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 80%);
+    filter: blur(60px);
+    transform: translateY(-50%);
+    pointer-events: none;
+    animation: pulse 8s infinite alternate;
+}
+
+.cta-light.left {
+    left: -90px;
+}
+
+.cta-light.right {
+    right: -90px;
+}
+
+.cta-section h2 {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.cta-section p {
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.cta-button {
+    border: 1px solid #ececec;
+    background: transparent;
+    border-radius: 10px;
+    padding: 14px 36px;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 5;
+}
+
+.cta-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 992px) {
+    .experience-hero {
+        padding: 80px 40px;
+    }
+    
+    .experience-hero h1 {
+        font-size: 36px;
+    }
+    
+    .timeline-container::before {
+        left: 30px;
+    }
+    
+    .timeline-item:nth-child(even),
+    .timeline-item:nth-child(odd) {
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 70px;
+        padding-right: 0;
+        text-align: left;
+    }
+    
+    .timeline-item:nth-child(even)::before,
+    .timeline-item:nth-child(odd)::before {
+        left: 22px;
+        right: auto;
+    }
+    
+    .achievement-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .achievement-card {
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    .cta-section {
+        padding: 80px 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .experience-hero {
+        padding: 60px 20px;
+    }
+    
+    .experience-hero h1 {
+        font-size: 28px;
+    }
+    
+    .experience-hero p {
+        font-size: 16px;
+    }
+    
+    .timeline-container {
+        margin: 40px auto;
+    }
+    
+    .timeline-year {
+        font-size: 20px;
+    }
+    
+    .timeline-content h3 {
+        font-size: 20px;
+    }
+    
+    .timeline-content {
+        padding: 20px;
+    }
+    
+    .achievement-section {
+        padding: 60px 20px;
+    }
+    
+    .achievement-section h2 {
+        font-size: 28px;
+    }
+    
+    .cta-section {
+        padding: 60px 20px;
+    }
+    
+    .cta-section h2 {
+        font-size: 28px;
+    }
+    
+    .cta-section p {
+        font-size: 16px;
+    }
+    
+    .cta-button {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+}

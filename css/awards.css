@@ -1,0 +1,344 @@
+
+.awards-hero {
+    position: relative;
+    text-align: center;
+    padding: 120px 60px 60px;
+    overflow: hidden;
+}
+
+.awards-hero h1 {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-out 0.2s forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.awards-hero p {
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    color: #e1e1e1;
+    animation: fadeIn 1s ease-out 0.4s forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.trophy-icon {
+    font-size: 60px;
+    color: #FFD700;
+    margin-bottom: 30px;
+    animation: pulse 4s infinite alternate;
+}
+
+.awards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin: 60px auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.award-card {
+    background-color: #0c0c0c;
+    border: 1px solid #2e2e2e;
+    border-radius: 12px;
+    padding: 30px;
+    width: 340px;
+    transition: all 0.4s ease;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.award-card.reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.award-card:hover {
+    transform: translateY(-8px);
+    border-color: #4a4a4a;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.award-icon {
+    width: 80px;
+    height: 80px;
+    background-color: rgba(255, 215, 0, 0.1);
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: #FFD700;
+    transition: all 0.3s ease;
+}
+
+.award-card:hover .award-icon {
+    transform: scale(1.1);
+    background-color: rgba(255, 215, 0, 0.2);
+}
+
+.award-year {
+    font-size: 14px;
+    font-weight: 500;
+    color: #a0a0a0;
+    margin-bottom: 8px;
+}
+
+.award-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #ffffff;
+}
+
+.award-description {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #e1e1e1;
+    margin-bottom: 20px;
+}
+
+.award-presenter {
+    font-size: 14px;
+    color: #a0a0a0;
+    font-style: italic;
+}
+
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: #2e2e2e;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: calc(50% - 20px);
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: all 0.6s ease;
+}
+
+.timeline-item.reveal {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+    transform: translateX(30px);
+}
+
+.timeline-item:nth-child(even).reveal {
+    transform: translateX(0);
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    background-color: #1a1a1a;
+    border: 4px solid #FFD700;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-item:nth-child(even)::after {
+    left: -10px;
+}
+
+.timeline-content {
+    padding: 20px 30px;
+    background-color: #0c0c0c;
+    position: relative;
+    border-radius: 12px;
+    border: 1px solid #2e2e2e;
+    transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+    background-color: #1a1a1a;
+    border-color: #4a4a4a;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-year {
+    font-weight: bold;
+    color: #FFD700;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.partners-section {
+    text-align: center;
+    padding: 80px 0;
+    background-color: #0a0a0a;
+    position: relative;
+    overflow: hidden;
+}
+
+.partners-section h2 {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    color: white;
+}
+
+.partners-section p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto 60px;
+    color: #e1e1e1;
+}
+
+.partners-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.partner-logo {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 10px;
+    width: 180px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    filter: grayscale(1);
+    opacity: 0.7;
+}
+
+.partner-logo:hover {
+    transform: translateY(-5px);
+    filter: grayscale(0);
+    opacity: 1;
+    border-color: #4a4a4a;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.partner-logo-placeholder {
+    font-size: 16px;
+    font-weight: 500;
+    color: #aaa;
+}
+
+@media (max-width: 992px) {
+    .awards-hero h1 {
+        font-size: 42px;
+    }
+
+    .awards-hero p {
+        font-size: 16px;
+    }
+
+    .timeline::after {
+        left: 31px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        left: 0;
+    }
+
+    .timeline-item::after {
+        left: 20px;
+        right: auto;
+    }
+
+    .timeline-item:nth-child(even)::after {
+        left: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .awards-hero {
+        padding: 100px 30px 50px;
+    }
+
+    .awards-hero h1 {
+        font-size: 36px;
+    }
+
+    .award-card {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .partners-grid {
+        gap: 20px;
+    }
+
+    .partner-logo {
+        width: 140px;
+        height: 90px;
+    }
+}
+
+@media (max-width: 576px) {
+    .awards-hero h1 {
+        font-size: 28px;
+    }
+
+    .trophy-icon {
+        font-size: 44px;
+    }
+
+    .timeline-content {
+        padding: 15px;
+    }
+
+    .award-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+    }
+
+    .award-title {
+        font-size: 18px;
+    }
+
+    .partners-section h2 {
+        font-size: 28px;
+    }
+}

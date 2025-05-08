@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Extended Warranty - S4annn Motors</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;800&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link rel="stylesheet" href="../style.css">
+        <style>
+            .warranty-hero {
+                position: relative;
+                overflow: hidden;
+                text-align: center;
+                padding: 120px 60px 80px;
+                animation: fadeIn 1s ease-out forwards;
+            }
+            
+            .warranty-hero h1 {
+                font-size: 48px;
+                font-weight: 800;
+                margin-bottom: 20px;
+                animation: fadeIn 1s ease-out 0.2s forwards;
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            
+            .warranty-hero p {
+                font-size: 18px;
+                line-height: 1.6;
+                margin: 0 auto 40px;
+                max-width: 800px;
+                animation: fadeIn 1s ease-out 0.4s forwards;
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            
+            .warranty-benefits {
+                padding: 80px 60px;
+                text-align: center;
+            }
+            
+            .warranty-benefits h2 {
+                font-size: 36px;
+                font-weight: 800;
+                margin-bottom: 50px;
+            }
+            
+            .benefits-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 30px;
+                margin-top: 30px;
+            }
+            
+            .benefit-card {
+                background: #0c0c0c;
+                border: 1px solid #2e2e2e;
+                border-radius: 12px;
+                padding: 30px;
+                width: 300px;
+                text-align: center;
+                transition: all 0.4s ease;
+            }
+            
+            .benefit-card:hover {
+                transform: translateY(-8px);
+                border-color: #ffffff;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            }
+            
+            .benefit-icon {
+                width: 70px;
+                height: 70px;
+                background-color: #303030;
+                border-radius: 50%;
+                margin: 0 auto 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 26px;
+                color: white;
+                transition: all 0.3s ease;
+            }
+            
+            .benefit-card:hover .benefit-icon {
+                background-color: #555555;
+                transform: scale(1.1);
+            }
+            
+            .benefit-card h3 {
+                font-size: 20px;
+                font-weight: 600;
+                margin-bottom: 15px;
+            }
+            
+            .benefit-card p {
+                color: #b0b0b0;
+                font-size: 16px;
+                line-height: 1.5;
+            }
+            
+            .warranty-plans {
+                padding: 80px 60px;
+                background: #0a0a0a;
+                text-align: center;
+            }
+            
+            .warranty-plans h2 {
+                font-size: 36px;
+                font-weight: 800;
+                margin-bottom: 20px;
+            }
+            
+            .warranty-plans p.description {
+                font-size: 18px;
+                max-width: 800px;
+                margin: 0 auto 50px;
+                color: #b0b0b0;
+            }
+            
+            .plans-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 30px;
+                margin-top: 30px;
+            }
+            
+            .plan-card {
+                background: #0c0c0c;
+                border: 1px solid #2e2e2e;
+                border-radius: 12px;
+                padding: 30px;
+                width: 320px;
+                text-align: left;
+                transition: all 0.4s ease;
+                position: relative;
+            }
+            
+            .plan-card:hover {
+                transform: translateY(-8px);
+                border-color: #ffffff;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            }
+            
+            .plan-card.featured {
+                border: 1px solid #4a4a4a;
+                background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            }
+            
+            .featured-tag {
+                position: absolute;
+                top: -15px;
+                right: 20px;
+                background: linear-gradient(90deg, #444 0%, #222 100%);
+                color: white;
+                padding: 5px 15px;
+                border-radius: 20px;
+                font-size: 14px;
+                font-weight: 500;
+            }
+            
+            .plan-card h3 {
+                font-size: 24px;
+                font-weight: 700;
+                margin-bottom: 15px;
+                color: white;
+            }
+            
+            .plan-price {
+                font-size: 36px;
+                font-weight: 800;
+                margin-bottom: 20px;
+                color: white;
+            }
+            
+            .price-period {
+                font-size: 16px;
+                color: #a0a0a0;
+            }
+            
+            .plan-features {
+                margin: 25px 0;
+            }
+            
+            .feature-item {
+                display: flex;
+                align-items: center;
+                margin-bottom: 12px;
+                color: #e0e0e0;
+                font-size: 15px;
+            }
+            
+            .feature-item i {
+                color: #00cc66;
+                margin-right: 10px;
+                font-size: 16px;
+            }
+            
+            .choose-plan-btn {
+                display: block;
+                width: 100%;
+                padding: 14px;
+                border: 1px solid #ececec;
+                border-radius: 8px;
+                background: transparent;
+                color: white;
+                font-size: 16px;
+                font-weight: 500;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                text-align: center;
+                margin-top: 20px;
+            }
+            
+            .choose-plan-btn:hover {
+                background: #3a3a3a;
+                transform: translateY(-2px);
+            }
+            
+            .choose-plan-btn.filled {
+                background: linear-gradient(90deg, #505050 0%, #303030 100%);
+            }
+            
+            .faq-section {
+                padding: 80px 60px;
+                text-align: center;
+            }
+            
+            .faq-section h2 {
+                font-size: 36px;
+                font-weight: 800;
+                margin-bottom: 50px;
+            }
+            
+            .faq-container {
+                max-width: 800px;
+                margin: 0 auto;
+            }
+            
+            .faq-item {
+                border-bottom: 1px solid #333;
+                margin-bottom: 20px;
+                text-align: left;
+            }
+            
+            .faq-question {
+                padding: 20px 0;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                cursor: pointer;
+                transition: color 0.3s ease;
+            }
+            
+            .faq-question h3 {
+                font-size: 18px;
+                font-weight: 500;
+                color: white;
+            }
+            
+            .faq-question i {
+                font-size: 18px;
+                transition: transform 0.3s ease;
+            }
+            
+            .faq-answer {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.5s ease;
+                color: #b0b0b0;
+                font-size: 16px;
+                line-height: 1.6;
+                padding-right: 30px;
+            }
+            
+            .faq-item.active .faq-question {
+                color: white;
+            }
+            
+            .faq-item.active .faq-question i {
+                transform: rotate(180deg);
+            }
+            
+            .faq-item.active .faq-answer {
+                max-height: 300px;
+                padding-bottom: 20px;
+            }
+            
+            .warranty-cta {
+                background: linear-gradient(90deg, #191919 0%, #0c0c0c 100%);
+                padding: 80px 60px;
+                text-align: center;
+                margin: 50px 0;
+            }
+            
+            .warranty-cta h2 {
+                font-size: 36px;
+                font-weight: 800;
+                margin-bottom: 20px;
+            }
+            
+            .warranty-cta p {
+                font-size: 18px;
+                max-width: 700px;
+                margin: 0 auto 30px;
+                color: #d0d0d0;
+            }
+            
+            .cta-button {
+                display: inline-block;
+                padding: 16px 40px;
+                background: linear-gradient(90deg, #444 0%, #222 100%);
+                color: white;
+                font-size: 16px;
+                font-weight: 500;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                border: none;
+            }
+            
+            .cta-button:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            }
+            
+            @media (max-width: 992px) {
+                .warranty-hero, .warranty-benefits, .warranty-plans, .faq-section, .warranty-cta {
+                    padding: 60px 40px;
+                }
+                
+                .warranty-hero h1 {
+                    font-size: 40px;
+                }
+                
+                .warranty-benefits h2, .warranty-plans h2, .faq-section h2, .warranty-cta h2 {
+                    font-size: 32px;
+                }
+                
+                .benefit-card, .plan-card {
+                    width: 280px;
+                }
+            }
+            
+            @media (max-width: 768px) {
+                .warranty-hero, .warranty-benefits, .warranty-plans, .faq-section, .warranty-cta {
+                    padding: 50px 30px;
+                }
+                
+                .warranty-hero h1 {
+                    font-size: 36px;
+                }
+                
+                .warranty-hero p, .warranty-plans p.description, .warranty-cta p {
+                    font-size: 16px;
+                }
+                
+                .warranty-benefits h2, .warranty-plans h2, .faq-section h2, .warranty-cta h2 {
+                    font-size: 28px;
+                }
+                
+                .benefit-card, .plan-card {
+                    width: 100%;
+                    max-width: 350px;
+                }
+            }
+            
+            @media (max-width: 576px) {
+                .warranty-hero, .warranty-benefits, .warranty-plans, .faq-section, .warranty-cta {
+                    padding: 40px 20px;
+                }
+                
+                .warranty-hero h1 {
+                    font-size: 30px;
+                }
+                
+                .warranty-benefits h2, .warranty-plans h2, .faq-section h2, .warranty-cta h2 {
+                    font-size: 26px;
+                }
+                
+                .faq-question h3 {
+                    font-size: 16px;
+                }
+                
+                .cta-button {
+                    width: 100%;
+                    padding: 14px 30px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../images/logo.png" alt="logo">
+                </a>
+            </div>
+
+            <button class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav id="nav-menu">
+                <div class="dropdown">
+                    <a href="#" id="dropdown-toggle"
+                        class="dropdown-toggle active">Why
+                        Choose Us <i
+                            class="fa-solid fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="quality.html">Quality Assurance</a>
+                        <a href="experience.html">Years of Experience</a>
+                        <a href="warranty.html" class="active">Extended
+                            Warranty</a>
+                        <a href="testimonials.html">Customer Testimonials</a>
+                        <a href="awards.html">Awards & Recognition</a>
+                    </div>
+                </div>
+                <a href="../index.html">Home</a>
+                <a href="../index.html#service">Service</a>
+                <a href="../index.html#product">Product</a>
+                <a href="../index.html#contact">Contact</a>
+                <a href="community.html">Community</a>
+            </nav>
+            <a href="signup.html"><button class="signup-button">Sign Up
+                    Now</button></a>
+        </header>
+
+        <section class="warranty-hero">
+            <div class="light-left"></div>
+            <div class="light-right"></div>
+
+            <h1>EXTENDED WARRANTY PROTECTION</h1>
+            <p>Drive with confidence knowing your vehicle is protected far
+                beyond the standard coverage. Our comprehensive extended
+                warranty plans are designed to safeguard your investment and
+                provide peace of mind for years to come.</p>
+            <img class="car-image" src="../images/warrantycar.png"
+                alt="Car with extended warranty protection">
+        </section>
+
+        <section class="warranty-benefits">
+            <h2>Benefits of Our Extended Warranty</h2>
+            <div class="benefits-container">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Comprehensive Coverage</h3>
+                    <p>Protection for thousands of mechanical and electrical
+                        components that keep your vehicle running smoothly.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <h3>Predictable Costs</h3>
+                    <p>No surprise expenses for covered repairs, helping you
+                        maintain your budget with confidence.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Expert Service</h3>
+                    <p>All repairs performed by certified technicians using
+                        genuine parts to maintain vehicle quality.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>Roadside Assistance</h3>
+                    <p>24/7 emergency support including towing, battery jumps,
+                        flat tire changes, and fuel delivery.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3>Transferable Coverage</h3>
+                    <p>Enhance your vehicle's resale value with warranty
+                        coverage that can transfer to the new owner.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3>Nationwide Protection</h3>
+                    <p>Coverage valid at any authorized service center across
+                        the country for your convenience.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="warranty-plans">
+            <h2>Choose Your Protection Plan</h2>
+            <p class="description">Select the coverage level that best suits
+                your driving needs and budget. All plans include our signature
+                roadside assistance and rental car benefits.</p>
+
+            <div class="plans-container">
+                <div class="plan-card">
+                    <h3>Essential</h3>
+                    <div class="plan-price">$1,299<span class="price-period">/3
+                            years</span></div>
+                    <p>Basic coverage for major vehicle systems.</p>
+                    <div class="plan-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Engine & Transmission</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Drive Axle</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Basic Electrical</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>24/7 Roadside Assistance</span>
+                        </div>
+                    </div>
+                    <button class="choose-plan-btn">Choose Plan</button>
+                </div>
+
+                <div class="plan-card featured">
+                    <span class="featured-tag">Most Popular</span>
+                    <h3>Premium</h3>
+                    <div class="plan-price">$2,199<span class="price-period">/3
+                            years</span></div>
+                    <p>Comprehensive coverage for most vehicle systems.</p>
+                    <div class="plan-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>All Essential Plan Features</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Air Conditioning & Heating</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Steering & Suspension</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Fuel & Cooling Systems</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Rental Car Reimbursement</span>
+                        </div>
+                    </div>
+                    <button class="choose-plan-btn filled">Choose Plan</button>
+                </div>
+
+                <div class="plan-card">
+                    <h3>Ultimate</h3>
+                    <div class="plan-price">$2,999<span class="price-period">/3
+                            years</span></div>
+                    <p>Maximum protection for total peace of mind.</p>
+                    <div class="plan-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>All Premium Plan Features</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>High-Tech Electronics</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Navigation & Audio Systems</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Trip Interruption Coverage</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Tire & Wheel Protection</span>
+                        </div>
+                    </div>
+                    <button class="choose-plan-btn">Choose Plan</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What does an extended warranty cover?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our extended warranty plans cover mechanical and
+                            electrical failures that occur after your factory
+                            warranty expires. Depending on the plan you choose,
+                            coverage can include the engine, transmission, drive
+                            axle, electrical components, air conditioning,
+                            heating, steering, suspension, fuel system, cooling
+                            system, and more. Each plan has specific coverages
+                            and exclusions detailed in the warranty
+                            agreement.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>When should I purchase an extended warranty?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The best time to purchase an extended warranty is
+                            while your vehicle is still under its original
+                            factory warranty. This ensures continuous coverage
+                            and typically results in lower premiums. However, we
+                            do offer plans for vehicles that are no longer
+                            covered by their original warranty, subject to an
+                            inspection and eligibility requirements.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I cancel my extended warranty?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, our extended warranty plans come with a 30-day
+                            money-back guarantee if no claims have been filed.
+                            After this period, you can still cancel for a
+                            prorated refund based on time and mileage. A small
+                            administration fee may apply for cancellations after
+                            the initial 30-day period.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How do I file a claim?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Filing a claim is simple. If your vehicle experiences
+                            a covered mechanical failure, take it to any
+                            licensed repair facility. Provide the repair
+                            facility with your warranty information and ask them
+                            to contact our claims department for authorization
+                            before any repairs are performed. Our claims
+                            specialists will work directly with the repair
+                            facility to authorize and pay for covered
+                            repairs.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Are there any deductibles?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, our plans typically have a deductible that
+                            applies to each covered repair visit. You can choose
+                            from different deductible options when purchasing
+                            your plan, with lower deductibles resulting in
+                            slightly higher plan costs. The deductible amount
+                            will be clearly stated in your warranty
+                            agreement.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="warranty-cta">
+            <h2>Protect Your Investment Today</h2>
+            <p>Don't wait until it's too late. Safeguard your vehicle against
+                unexpected repair costs with our comprehensive extended warranty
+                protection. Our expert team is ready to help you choose the
+                perfect coverage plan.</p>
+            <button class="cta-button">Get Your Quote Now</button>
+        </section>
+
+        <section class="contact-section">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Contact Us</h2>
+                    <p>Have questions about our extended warranty plans? Our
+                        warranty specialists are here to help you find the
+                        perfect coverage for your vehicle.</p>
+
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>+6282259725826</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>s4annmotorcycle@gmail.com</span>
+                    </div>
+
+                    <div class="social-media">
+                        <a href="https://linkedin.com/sandyteukupranata.15/"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="https://facebook.com/sandytekukupranata.15/"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/sndyytp._"><i
+                                class="fab fa-instagram"></i></a>
+                        <a
+                            href="https://api.whatsapp.com/send/?phone=6282259725826&text&type=phone_number&app_absent=0"><i
+                                class="fab fa-whatsapp"></i></a>
+                        <a href="https://github.com/S4annn"><i
+                                class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Request Warranty Information</h3>
+                    <form>
+                        <div class="form-row">
+                            <input type="text"
+                                placeholder="First Name*"
+                                required>
+                            <input type="text"
+                                placeholder="Last Name">
+                        </div>
+                        <input type="email" placeholder="Email*"
+                            required>
+                        <select required>
+                            <option value>Select Vehicle Type*</option>
+                            <option value="sedan">Sedan</option>
+                            <option value="suv">SUV</option>
+                            <option value="truck">Truck</option>
+                            <option value="luxury">Luxury</option>
+                            <option value="electric">Electric</option>
+                        </select>
+                        <div class="phone-input">
+                            <span class="flag"><img
+                                    src="../images/indonesia.png"
+                                    alt="flag"></span>
+                            <input type="tel"
+                                placeholder="Enter Your Phone Number"
+                                required>
+                        </div>
+                        <textarea
+                            placeholder="Tell us about your vehicle (Year, Make, Model, Mileage)"></textarea>
+                        <button type="submit">Submit Request</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2025 S4annn Motors. All rights reserved.</p>
+        </footer>
+
+        <script src="../script.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // FAQ Accordion
+                const faqItems = document.querySelectorAll('.faq-item');
+                
+                faqItems.forEach(item => {
+                    const question = item.querySelector('.faq-question');
+                    
+                    question.addEventListener('click', () => {
+                        const isActive = item.classList.contains('active');
+                        
+                        // Close all FAQ items
+                        faqItems.forEach(faqItem => {
+                            faqItem.classList.remove('active');
+                        });
+                        
+                        // Open clicked item if it wasn't active
+                        if (!isActive) {
+                            item.classList.add('active');
+                        }
+                    });
+                });
+                
+                // Reveal animations
+                const observerOptions = {
+                    root: null,
+                    rootMargin: '0px',
+                    threshold: 0.1
+                };
+                
+                const revealElements = document.querySelectorAll('.benefit-card, .plan-card');
+                
+                revealElements.forEach((element, index) => {
+                    element.style.opacity = '0';
+                    element.style.transform = 'translateY(30px)';
+                    element.style.transitionDelay = `${0.1 * index}s`;
+                });
+                
+                const revealOnScroll = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('reveal');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+                
+                revealElements.forEach(element => {
+                    revealOnScroll.observe(element);
+                });
+            });
+        </script>
+    </body>
+</html>

@@ -106,7 +106,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const toggle = dropdown.querySelector('.dropdown-toggle');
       const content = dropdown.querySelector('.dropdown-content');
   
-      // Hover (desktop)
       dropdown.addEventListener('mouseenter', () => {
         content.style.display = 'block';
       });
